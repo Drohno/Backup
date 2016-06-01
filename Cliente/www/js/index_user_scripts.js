@@ -608,7 +608,7 @@ function register_event_handlers()
         /* button  #register */
     $(document).on("click", "#register", function(evt)
     {
-    var email = $("#correo").val();
+      var email = $("#correo").val();
       var nom = $("#nom").val();
       var ape = $("#ape").val();
       //validaciones antes de registrar
@@ -673,40 +673,45 @@ function register_event_handlers()
     });
      
     function actualizarPromos(){
-        $.ajax({
-                type:'POST',
-                url:'http://www.appserv.hol.es/apppromos.php',
-                data: {codasoc: 3},
-                dataType: 'json',
-                success: function (data) {
-                    $('#promo_list').html('<ul data-role="listview" id="promo_list" style="list-style-type: none; padding: 0px; margin: 0px;">                         <!-- RELLENADO POR script EN JS --></ul>');
-                   for(var i = 0; i<data.ofertas.length; i++){
-                        //[i][0] -> Titulo oferta
-                        //[i][1] -> Cuerpo oferta
-                        //[i][2] -> URL imagen
-                        //[i][3] -> inicio oferta
-                        //[i][4] -> fin oferta
-                        if(i%2==0){
-                             $('#promo_list').append('<li style="margin: 10px; background-color: #FDA6AC; border: 5px groove;"><img src="'+data.ofertas[i][2]+'" style="width: 100%; margin: auto; display: block; padding: 0px; margin:0px;"><h3>'+data.ofertas[i][0] 
-                            +'</h3><p>' + data.ofertas[i][1] +'</p>'
-                            +'<h4>Fin oferta:</h4><p>'+ data.ofertas[i][4] + '</p></li>');
-                        }else{
-                            $('#promo_list').append('<li style="margin: 10px; background-color: #FED2D5; border: 5px groove;"><img src="'+data.ofertas[i][2]+'" style="width: 100%; margin: auto; display: block; padding: 0px; margin:0px;"><h3>'+data.ofertas[i][0] 
-                            +'</h3><p>' + data.ofertas[i][1] +'</p>'
-                            +'<h4>Fin oferta:</h4><p>'+ data.ofertas[i][4] + '</p></li>');
+        var aux = localStorage.getItem("registrado") || "false";
+        if(aux.localeCompare("true")==0){
+            $.ajax({
+                    type:'POST',
+                    url:'http://www.appserv.hol.es/apppromos.php',
+                    data: {codasoc: 3},
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#promo_list').html('<ul data-role="listview" id="promo_list" style="list-style-type: none; padding: 0px; margin: 0px;">                         <!-- RELLENADO POR script EN JS --></ul>');
+                       for(var i = 0; i<data.ofertas.length; i++){
+                            //[i][0] -> Titulo oferta
+                            //[i][1] -> Cuerpo oferta
+                            //[i][2] -> URL imagen
+                            //[i][3] -> inicio oferta
+                            //[i][4] -> fin oferta
+                            if(i%2==0){
+                                 $('#promo_list').append('<li style="margin: 10px; background-color: #FDA6AC; border: 5px groove;"><img src="'+data.ofertas[i][2]+'" style="width: 100%; margin: auto; display: block; padding: 0px; margin:0px;"><h3>'+data.ofertas[i][0] 
+                                +'</h3><p>' + data.ofertas[i][1] +'</p>'
+                                +'<h4>Fin oferta:</h4><p>'+ data.ofertas[i][4] + '</p></li>');
+                            }else{
+                                $('#promo_list').append('<li style="margin: 10px; background-color: #FED2D5; border: 5px groove;"><img src="'+data.ofertas[i][2]+'" style="width: 100%; margin: auto; display: block; padding: 0px; margin:0px;"><h3>'+data.ofertas[i][0] 
+                                +'</h3><p>' + data.ofertas[i][1] +'</p>'
+                                +'<h4>Fin oferta:</h4><p>'+ data.ofertas[i][4] + '</p></li>');
+                            }
                         }
+                    $('#promo_list').listview('refresh');
+                    },
+                    error: function(xhr, textStatus, errorThrown, data){
+                        window.console.log("xhr.status: " + xhr.status);
+                        window.console.log("xhr.statusText: " + xhr.statusText);
+                        window.console.log("xhr.readyState: " + xhr.readyState);
+                        window.console.log("xhr.responseText: " + xhr.responseText);
+                        window.console.log("errorThrown: " + errorThrown);
+                        alert("Error consiguiendo ofertas");                  
                     }
-                $('#promo_list').listview('refresh');
-                },
-                error: function(xhr, textStatus, errorThrown, data){
-                    window.console.log("xhr.status: " + xhr.status);
-                    window.console.log("xhr.statusText: " + xhr.statusText);
-                    window.console.log("xhr.readyState: " + xhr.readyState);
-                    window.console.log("xhr.responseText: " + xhr.responseText);
-                    window.console.log("errorThrown: " + errorThrown);
-                    alert("Error consiguiendo ofertas");                  
-                }
-            });
+                });
+        }else{
+            alert("Si quiere ver las promociones, considere registrarse porfavor :)");
+        }
     }
      
      function infoCuenta(){
