@@ -247,6 +247,7 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#cuenta"); 
+        infoCuenta();
         uib_sb.close_all_sidebars;
     });
     
@@ -277,6 +278,7 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#cuenta");
+        infoCuenta();
         uib_sb.close_all_sidebars;
     });
     
@@ -543,6 +545,7 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#cuenta"); 
+        infoCuenta();
         uib_sb.close_all_sidebars;
          return false;
     });
@@ -705,6 +708,12 @@ function register_event_handlers()
                 }
             });
     }
+     
+     function infoCuenta(){
+        $(document).getElementById("em").innerHTML = localStorage.getItem("email");
+        $(document).getElementById("nm").innerHTML = localStorage.getItem("nom");
+        $(document).getElementById("ap").innerHTML = localStorage.getItem("ape");
+     }
     }
  document.addEventListener("app.Ready", register_event_handlers, false);
 })();

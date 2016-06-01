@@ -543,7 +543,7 @@ label:empty {
 .fondoFormulario {
   padding: 5px;
   margin: 5px;
-  background-color: orange;
+  background-color: #fcbe32;
 }
 @media all {
   .text-cuenta p {
@@ -573,7 +573,7 @@ label:empty {
   }
 }
 .red {
-  background-color: #FF0505;
+  background-color: #ff7777;
 }
 .Sliders {
   background-color: #47b8e0;

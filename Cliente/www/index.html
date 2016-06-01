@@ -283,7 +283,7 @@
             <!-- Codi navbar -->
             <div role="navigation" class="navbar navbar-default full-width-widget widget d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
                 <span><button class="btn widget d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navBCuenta"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
-                <a class="navbar-brand" href="#">Cuenta</a>
+                <a class="navbar-brand">Cuenta</a>
                 <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
             </div>
             <div class="tarea widget uib_w_42 text-cuenta sombreadoGeneral fondoFormulario boton-cuenta-registro" data-uib="media/text" data-ver="0" name="uib_w_42">
@@ -306,11 +306,6 @@
             </div>
             <button class="btn widget uib_w_43 boton-cuenta-registro sombreadoGeneral red btn-default" data-uib="twitter%20bootstrap/button" data-ver="1">Cerrar sesión</button>
         </div>
-        <script>
-            document.getElementById("em").innerHTML = localStorage.getItem("email");
-            document.getElementById("nm").innerHTML = localStorage.getItem("nom");
-            document.getElementById("ap").innerHTML = localStorage.getItem("ape");
-        </script>
         <!-- CODI PROPIO TIENDAS -->
         <div class="upage vertical-col left hidden fondoGeneral" id="interface_tienda">
             <!-- CÓDIGO COMÚN TIENDAS -->
@@ -323,7 +318,7 @@
                         <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPp">Promos</button>
                         <button class="SliderBarBotonRegistro btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ARegistro">Registro</button>
                         <button class="SliderBarBotonCuenta btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ACuenta">Cuenta</button>
-                        <button class="SliderLogin btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ALogin">Cuenta</button>
+                        <button class="SliderLogin btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ALogin">Login</button>
                     </div>
                     <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
                 </div>
@@ -607,6 +602,16 @@
             </div>
         </div>
         <script>
+            //VALORES INTERNOS DE CUENTA
+            
+            document.getElementById("em").innerHTML = localStorage.getItem("email");
+            document.getElementById("em").style.backgroundColor = 'white';
+            document.getElementById("nm").innerHTML = localStorage.getItem("nom");
+            document.getElementById("nm").style.backgroundColor = 'white';
+            document.getElementById("ap").innerHTML = localStorage.getItem("ape");
+            document.getElementById("ap").style.backgroundColor = 'white';
+            
+            //CODI QUE MODIFICA LA VISTA SEGÚN SI LA PERSONA ESTA REGISTRADA/LOGGEADA
             var aux = localStorage.getItem("registrado") || "false";
             var primera = document.getElementsByClassName("SliderBarBotonRegistro");
             var segunda = document.getElementsByClassName("SliderBarBotonCuenta");
