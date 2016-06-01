@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="galleria/galleria.classic.css">
+        <link rel="stylesheet" type="text/css" href="icon-fonts/elusive-icons-2.0.0/css/elusive-icons.css">
+        <link rel="stylesheet" type="text/css" href="icon-fonts/font-awesome-4.3.0/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" class="uib-framework-theme">
+        <meta charset="UTF-8">
+        <!-- PARA AYUDAR A QUE LAS CONEXIONES EXTERNAS FUNCIONEN GOOD -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'">
+        <title>Sant Boi Comercial</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        </style>
+
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+
+        <script src="cordova.js" id="xdkJScordova_"></script>
+
+        <script src="js/app.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="sidebar/js/hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/jquery.hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/swipe-hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/sidebar.js"></script>
+        <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
+        <script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
+        <script type="application/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+        <script type="application/javascript" src="google_maps/google_maps.js"></script>
+        <script type="application/javascript" src="galleria/galleria-1.3.6.min.js"></script>
+        <script type="application/javascript" src="galleria/galleria.classic.min.js"></script>
+        <script type="application/javascript" src="galleria/galleria-startup.js"></script>
+        <script type="application/javascript" src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard,package.geoObjects&amp;lang=en-US"></script>
+        <script type="application/javascript" src="yandex_maps/yandex_maps.js"></script>
+    </head>
+
+    <body>
+        <!-- CODI INICIO-->
+        <div class="upage fondoGeneral" id="mainpage">
+            <!-- Codi del sidebar -->
+            <div class="inner-element uib_w_1 uib_sidebar leftbar thumb-bg bar-gutter swipe Sliders" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':255, 'side':'left', 'dur':200}" id="sbPrin">
+                <div class="sidebar-content content-area vertical-col">
+                    <div class="btn-group uib-bs-flex widget uib_w_6 btn-group-vertical botonesSlider" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+                        <button class="btn widget uib_w_13 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
+                        <button class="btn widget uib_w_13 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bTp">Tiendas</button>
+                        <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPp">Promos</button>
+                        <button class="SliderBarBotonRegistro btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ARegistro">Registro</button>
+                        <button class="SliderBarBotonCuenta btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ACuenta">Cuenta</button>
+                        <button class="SliderLogin btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ALogin">Login</button>
+                    </div>
+                    <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
+                </div>
+            </div>
+            <!-- Codi navbar -->
+            <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_3 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                <span><button class="btn widget uib_w_4 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navBPrinci"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                <a class="navbar-brand">Una Gran Botiga</a>
+                <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+            </div>
+            <!-- IMAGEN ASOCIACIÓN -->
+            <div class="widget uib_w_5 scale-image image-margins" data-uib="media/img" data-ver="0">
+                <figure class="figure-align">
+                    <img src="http://www.unagranbotiga.cat/img/logo.png">
+
+                    <figcaption data-position="bottom"></figcaption>
+                </figure>
+            </div>
+        </div>
+        <!-- CODI TIENDAS -->
+        <div class="upage hidden fondoGeneral" id="tiendas">
+            <div class="upage-outer">
+                <!-- CODI NAVBAR -->
+                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_9 d-margins navbarBackground navbarText  sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <button class="btn widget uib_w_11 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navBtiendas"><i class="fa fa-navicon" data-position="icon only"></i>
+                    </button>
+                    <a class="navbar-brand" href="#">Tiendas</a>
+                    <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+                </div>
+                <!-- CODI SLIDEBAR -->
+                <div class="inner-element uib_w_10 uib_sidebar leftbar thumb-bg bar-gutter swipe Sliders" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':255, 'side':'left', 'dur':200}" id="sbTiendas">
+                    <div class="sidebar-content content-area vertical-col">
+                        <div class="btn-group uib-bs-flex widget uib_w_12 btn-group-vertical botonesSlider" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+                            <button class="btn widget uib_w_13 vertical-group btn-default ButtonStyle" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
+                            <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bTp">Tiendas</button>
+                            <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPp">Promos</button>
+                            <button class="SliderBarBotonRegistro btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ARegistro">Registro</button>
+                            <button class="SliderBarBotonCuenta btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ACuenta">Cuenta</button>
+                            <button class="SliderLogin btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ALogin">Login</button>
+                        </div>
+                        <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
+                    </div>
+                </div>
+                <!--Codi listview -->
+                <div class="list-group widget uib_w_17 d-margins sombreadoGeneral" data-uib="twitter%20bootstrap/list_group" data-ver="1">
+                    <!-- ESQUELETO NUEVA ENTRADA (RECUERDA LUEGO EN LOS TRIGGERS DEL LISTVIEW LINKEAR LA ENTRADA CON LA SUBPAGE DEL NEGOCIO)
+                    <a class="list-group-item allow-badge widget" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                        <h4 class="list-group-item-heading">NOMBRE NEGOCIO</h4>
+                        <p class="list-group-item-text">SERVICIOS EN GENERAL QUE OFRECE  (SON COMO TAGS)</p>
+                    </a>
+                    -->
+                    <a class="list-group-item allow-badge widget uib_w_26" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                        <h4 class="list-group-item-heading">20cm studio</h4>
+                        <p class="list-group-item-text">Fotografía e Informática</p>
+                    </a>
+                    <a class="list-group-item allow-badge widget uib_w_25" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                        <h4 class="list-group-item-heading">Abacus</h4>
+                        <p class="list-group-item-text">Librerías, papelerías</p>
+                    </a>
+                    <a class="list-group-item allow-badge widget uib_w_27" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                        <h4 class="list-group-item-heading">Informática Sant Boi</h4>
+                        <p class="list-group-item-text">Informática</p>
+                    </a>
+                    <a class="list-group-item allow-badge widget uib_w_34" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                        <h4 class="list-group-item-heading">Centre Quiromassatge Mª Teresa Castanera</h4>
+                        <p class="list-group-item-text">Centre de Quiromassatge</p>
+                    </a>
+                    <a class="list-group-item allow-badge widget uib_w_35" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                        <h4 class="list-group-item-heading">El Fogon de Sant Boi</h4>
+                        <p class="list-group-item-text">Restaurante</p>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <!-- CODI PROMOS -->
+        <div class="upage vertical-col left hidden fondoGeneral" id="promos">
+            <!-- CODI SLIDEBAR -->
+            <div class="inner-element uib_w_10 uib_sidebar leftbar thumb-bg bar-gutter swipe Sliders" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':255, 'side':'left', 'dur':200}" id="sbpromos">
+                <div class="sidebar-content content-area vertical-col">
+                    <div class="btn-group uib-bs-flex widget uib_w_12 btn-group-vertical botonesSlider" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+                        <button class="btn widget uib_w_13 vertical-group btn-default ButtonStyle" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
+                        <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bTp">Tiendas</button>
+                        <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPp">Promos</button>
+                        <button class="SliderBarBotonRegistro btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ARegistro">Registro</button>
+                        <button class="SliderBarBotonCuenta btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ACuenta">Cuenta</button>
+                        <button class="SliderLogin btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ALogin">Login</button>
+                    </div>
+                    <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
+                </div>
+            </div>
+            <!-- Codi navbar -->
+            <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_3 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                <span><button class="btn widget uib_w_4 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navBpromos"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                <a class="navbar-brand" href="#">Promos</a>
+                <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+            </div>
+            <!-- Lista de ofertas autogenerada en base a la info de la BBDD -->
+            <div data-role="content">
+                <div class="example-wrapper" data-iscroll="">
+                    <ul data-role="listview" id="promo_list" style="list-style-type: none; padding: 0px; margin: 0px;">
+                        <!-- RELLENADO POR script EN JS -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- CODI LOGIN -->
+        <div class="upage vertical-col left hidden" id="login">
+            <!-- CODI SLIDEBAR -->
+            <div class="inner-element uib_w_10 uib_sidebar leftbar thumb-bg bar-gutter swipe Sliders" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':255, 'side':'left', 'dur':200}" id="sbLogin">
+                <div class="sidebar-content content-area vertical-col">
+                    <div class="btn-group uib-bs-flex widget uib_w_12 btn-group-vertical botonesSlider" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+                        <button class="btn widget uib_w_13 vertical-group btn-default ButtonStyle" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
+                        <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bTp">Tiendas</button>
+                        <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPp">Promos</button>
+                        <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ARegistro">Registro</button>
+                        <button class="Login btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ALogin">Login</button>
+                    </div>
+                    <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
+                </div>
+            </div>
+            <!-- Codi navbar -->
+            <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_3 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                <span><button class="btn widget uib_w_4 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navLogin"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                <a class="navbar-brand">Login</a>
+                <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+            </div>
+            <!-- PARA VER JS, ir a index_user_scripts.js -->
+            <form id="form_login">
+                <div class="col uib_col_1 col-0_12-12 sombreadoGeneral fondoFormulario" data-uib="layout/col" data-ver="0">
+                    <div class="widget-container content-area vertical-col">
+                        <div class="table-thing widget d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+                            <label class="narrow-control label-top-left">email</label>
+                            <input name="logmail" class="wide-control form-control default" type="email" id="logmail" placeholder="correo@ejemplo.com">
+                        </div>
+                        <div class="table-thing widget uib_w_31 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+                            <label class="narrow-control label-top-left">Contraseña</label>
+                            <input name="logpass" class="wide-control form-control default" type="password" id="logpass">
+                        </div>
+                        <div>
+                            <input type="hidden" name="codasoc" value="3">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button class="btn widget d-margins sombreadoGeneral btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="log">Login</button>
+        </div>
+        <!--  CODI  REGISTRO -->
+        <div class="upage vertical-col left hidden fondoGeneral" id="registro">
+            <!-- CODI SLIDEBAR -->
+            <div class="inner-element uib_w_10 uib_sidebar leftbar thumb-bg bar-gutter swipe Sliders" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':255, 'side':'left', 'dur':200}" id="sbRegistro">
+                <div class="sidebar-content content-area vertical-col">
+                    <div class="btn-group uib-bs-flex widget uib_w_12 btn-group-vertical botonesSlider" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+                        <button class="btn widget uib_w_13 vertical-group btn-default ButtonStyle" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
+                        <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bTp">Tiendas</button>
+                        <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPp">Promos</button>
+                        <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ARegistro">Registro</button>
+                        <button class="Login btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ALogin">Login</button>
+                    </div>
+                    <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
+                </div>
+            </div>
+            <!-- Codi navbar -->
+            <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_3 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                <span><button class="btn widget uib_w_4 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navRegistro"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                <a class="navbar-brand" href="#">Registro</a>
+                <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+            </div>
+            <!-- PARA VER JS, ir a index_user_scripts.js -->
+            <form id="form_registro">
+                <div class="col uib_col_1 col-0_12-12 sombreadoGeneral fondoFormulario" data-uib="layout/col" data-ver="0">
+                    <div class="widget-container content-area vertical-col">
+                        <div class="table-thing widget uib_w_29 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+                            <label class="narrow-control label-top-left">email</label>
+                            <input name="email" class="wide-control form-control default" type="email" id="correo" placeholder="correo@ejemplo.com">
+                        </div>
+                        <div class="table-thing widget uib_w_31 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+                            <label class="narrow-control label-top-left">Contraseña</label>
+                            <input name="regpass" class="wide-control form-control default" type="password" id="regpass">
+                        </div>
+                        <div class="table-thing widget uib_w_28 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+                            <label class="narrow-control label-top-left">Nombre</label>
+                            <input name="nom" class="wide-control form-control default" type="text" id="nom" placeholder="Su nombre aquí">
+                        </div>
+                        <div class="table-thing widget uib_w_30 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+                            <label class="narrow-control label-top-left">Apellidos</label>
+                            <input name="ape" class="wide-control form-control default" type="text" id="ape" placeholder="Sus apellidos aquí">
+                        </div>
+                        <div class="table-thing widget uib_w_31 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+                            <label class="narrow-control label-top-left">Edad</label>
+                            <input value="0" name="edad" class="wide-control form-control default" type="number" id="edad" placeholder="Introduzca su edad aquí">
+                        </div>
+                        <div>
+                            <input type="hidden" name="pushtoken" id="pushtoken" value="">
+                        </div>
+                        <div>
+                            <input type="hidden" name="codasoc" value="3">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button class="btn widget d-margins sombreadoGeneral btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="register">Registrarse</button>
+        </div>
+        <!-- CODI CUENTA -->
+        <div class="upage vertical-col left hidden" id="cuenta">
+            <!-- Codi del sidebar -->
+            <div class="inner-element uib_sidebar leftbar thumb-bg bar-gutter swipe Sliders" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':255, 'side':'left', 'dur':200}" id="sbCuenta">
+                <div class="sidebar-content content-area vertical-col">
+                    <div class="btn-group uib-bs-flex widget uib_w_6 btn-group-vertical botonesSlider" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+                        <button class="btn widget uib_w_13 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
+                        <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bTp">Tiendas</button>
+                        <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPp">Promos</button>
+                        <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ACuenta">Cuenta</button>
+                    </div>
+                    <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
+                </div>
+            </div>
+            <!-- Codi navbar -->
+            <div role="navigation" class="navbar navbar-default full-width-widget widget d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                <span><button class="btn widget d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navBCuenta"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                <a class="navbar-brand" href="#">Cuenta</a>
+                <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+            </div>
+            <div class="tarea widget uib_w_42 text-cuenta sombreadoGeneral fondoFormulario boton-cuenta-registro" data-uib="media/text" data-ver="0" name="uib_w_42">
+                <div class="widget-container left-receptacle"></div>
+                <div class="widget-container right-receptacle"></div>
+                <div class="text-container">
+                    <p><strong>email: </strong>
+                    </p>
+                    <p id="em"></p>
+
+                    <p><strong>nombre: </strong>
+                    </p>
+                    <p id="nm"></p>
+
+                    <p><strong>apellidos: </strong>
+                    </p>
+                    <p id="ap"></p>
+                </div>
+
+            </div>
+            <button class="btn widget uib_w_43 boton-cuenta-registro sombreadoGeneral red btn-default" data-uib="twitter%20bootstrap/button" data-ver="1">Cerrar sesión</button>
+        </div>
+        <script>
+            document.getElementById("em").innerHTML = localStorage.getItem("email");
+            document.getElementById("nm").innerHTML = localStorage.getItem("nom");
+            document.getElementById("ap").innerHTML = localStorage.getItem("ape");
+        </script>
+        <!-- CODI PROPIO TIENDAS -->
+        <div class="upage vertical-col left hidden fondoGeneral" id="interface_tienda">
+            <!-- CÓDIGO COMÚN TIENDAS -->
+            <!-- CODI SLIDEBAR -->
+            <div class="inner-element uib_w_10 uib_sidebar leftbar thumb-bg bar-gutter swipe Sliders" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':255, 'side':'left', 'dur':200}" id="sb">
+                <div class="sidebar-content content-area vertical-col">
+                    <div class="btn-group uib-bs-flex widget uib_w_12 btn-group-vertical botonesSlider" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+                        <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
+                        <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bTp">Tiendas</button>
+                        <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPp">Promos</button>
+                        <button class="SliderBarBotonRegistro btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ARegistro">Registro</button>
+                        <button class="SliderBarBotonCuenta btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ACuenta">Cuenta</button>
+                        <button class="SliderLogin btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="ALogin">Cuenta</button>
+                    </div>
+                    <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
+                </div>
+            </div>
+            <!-- ESQUELETO NUEVA TIENDA
+            <!-- NOMBRE NEGOCIO
+            <div id="NOMBRESUBPAGE" class="upage-content vertical-col left hidden">
+                <!-- Codi navbar
+                <div role="navigation" class="navbar navbar-default full-width-widget widget d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                    <a class="navbar-brand" href="#">NOMBRE NEGOCIO</a>
+                    <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+                </div>
+                <!-- IMAGEN EMPRESA
+                <div class="widget scale-image d-margins sombreadoGeneral" data-uib="media/img" data-ver="0">
+                    <figure class="figure-align">
+                        <img src="SOURCE IMAGEN NEGOCIO">
+                        <figcaption data-position="bottom"></figcaption>
+                    </figure>
+                </div>
+                <!-- DESCRIPCIÓN COMERCIO
+                <div class="tarea widget d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0">
+                    <div class="widget-container left-receptacle"></div>
+                    <div class="widget-container right-receptacle"></div>
+                    <div class="text-container">
+                        <p><strong>Sector: </strong>TIPO SECTOR</p>
+
+                        <p><strong>Categoría: </strong>TIPO CATEGORÍA</p>
+
+                        <p><strong>Contacto: </strong><a href="mailto:correoElectronico">infoQquieresQseVea</a>
+                        </p>
+
+                        <p><strong>Teléfono: </strong><a href="tel:+34NUMTELEFONO">TELEFONO</a>
+                        </p>
+
+                        <p><strong><a href="WEBSITE NEGOCIO">Website</a></strong>
+                        </p>
+
+                        <p><strong>Horario:</strong>
+                        </p>
+
+                        <p>De lunes a viernes de --:--h a --:--h</p>
+
+                        <p>Sábados de --:--h a --:--h</p>
+                        
+                        <p>Domingos de --:--h a --:--h</p>
+                    </div>
+                </div>
+                <!-- WIDGET GOOGLE (OJO, SE TIENE QUE INTRODUCIR GRÁFICAMENTE DE 0 PQ SINO DA ERRORES)
+                <div class="widget uib_w_40 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-animate-marker="bounce" data-long="2.042486" data-center-longitude="2.042486" data-lat="41.347448" data-center-latitude="41.347448"></div>
+            </div>
+            -->
+
+            <!--TIENDA 20CM Studio -->
+            <div id="a20cmstudio" class="upage-content vertical-col left ">
+                <!-- Codi navbar -->
+                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_26 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget uib_w_26 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                    <a class="navbar-brand" href="#">20 CM STUDIO</a>
+                    <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+                </div>
+                <!-- IMAGEN EMPRESA -->
+                <div class="widget uib_w_26 scale-image d-margins sombreadoGeneral" data-uib="media/img" data-ver="0">
+                    <figure class="figure-align">
+                        <img src="http://appserv.hol.es/images_tiendas/20cm-studio-barcelona.png">
+
+                        <figcaption data-position="bottom"></figcaption>
+                    </figure>
+                </div>
+                <!-- DESCRIPCIÓN COMERCIO -->
+                <div class="tarea widget uib_w_26 d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0" name="uib_w_226">
+                    <div class="widget-container left-receptacle"></div>
+                    <div class="widget-container right-receptacle"></div>
+                    <div class="text-container">
+                        <p><strong>Sector: </strong>Servicios</p>
+
+                        <p><strong>Categoría: </strong>Fotografía e Informática</p>
+
+                        <p><strong>Contacto: </strong><a href="mailto:marc@20cmstudio.com">marc@20cmstudio.com</a>
+                        </p>
+
+                        <p><strong>Teléfono: </strong><a href="tel:+34933482184">933 482 184</a>
+                        </p>
+
+                        <p><strong><a href="http://www.20cm.com.es">Website</a></strong>
+                        </p>
+
+                        <p><strong>Horario:</strong>
+                        </p>
+
+                        <p>De lunes a viernes de --:--h a --:--h</p>
+
+                        <p>Sábados de --:--h a --:--h</p>
+
+                        <p>Domingos de --:--h a --:--h</p>
+
+                    </div>
+                </div>
+                <div class="widget uib_w_36 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-long="2.034499" data-center-longitude="2.034499" data-lat="41.349257" data-center-latitude="41.349257" data-animate-marker="bounce"></div>
+                <!-- WIDGET GOOGLE -->
+
+            </div>
+            <!-- TIENDA ABACUS -->
+            <div id="abacus" class="upage-content vertical-col left hidden">
+                <!-- Codi navbar -->
+                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_25 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget uib_w_25 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                    <a class="navbar-brand" href="#">Abacus</a>
+                    <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+                </div>
+                <!-- IMAGEN EMPRESA -->
+                <div class="widget uib_w_25 scale-image d-margins fondoAbacus sombreadoGeneral" data-uib="media/img" data-ver="0">
+                    <figure class="figure-align">
+                        <img src="http://appserv.hol.es/images_tiendas/logo_Abacus11.png">
+
+                        <figcaption data-position="bottom"></figcaption>
+                    </figure>
+                </div>
+                <!-- DESCRIPCIÓN COMERCIO -->
+                <div class="tarea widget uib_w_25 d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0" name="uib_w_25">
+                    <div class="widget-container left-receptacle"></div>
+                    <div class="widget-container right-receptacle"></div>
+                    <div class="text-container">
+                        <p><strong>Sector: </strong>Ocio, Cultura</p>
+
+                        <p><strong>Categoría: </strong>Librerías, papelerías</p>
+
+                        <p><strong>Contacto: </strong><a href="mailto:stboi@abacus.coop">stboi@abacus.coop</a>
+                        </p>
+
+                        <p><strong><a href="http://abacus.coop/es/locations/abacus-sant-boi-de-llobregat/">Website</a></strong>
+                        </p>
+
+                        <p><strong>Horario:</strong>
+                        </p>
+
+                        <p>De lunes a viernes de 9:30h a 14h/16:30h a 20:30h</p>
+
+                        <p>Sábados de 10h a 14h/16:30h a 20:30h</p>
+
+                        <p>Domingos cerrados</p>
+                    </div>
+                </div>
+                <!-- WIDGET GOOGLE -->
+
+                <div class="widget uib_w_37 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-long="2.043408" data-center-longitude="2.043408" data-lat="41.340789" data-center-latitude="41.340789" data-animate-marker="bounce"></div>
+            </div>
+            <!-- TIENDA INFORMÁTICA SANT BOI -->
+            <div id="informaticastboi" class="upage-content vertical-col left hidden">
+                <!-- Codi navbar -->
+                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_27 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget uib_w_27 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                    <a class="navbar-brand" href="#">Informática Sant Boi</a>
+                    <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+                </div>
+                <!-- IMAGEN EMPRESA -->
+                <div class="widget uib_w_27 scale-image d-margins sombreadoGeneral" data-uib="media/img" data-ver="0">
+                    <figure class="figure-align">
+                        <img src="http://appserv.hol.es/images_tiendas/Logo-Informatica-Sant-Boi1.png">
+
+                        <figcaption data-position="bottom"></figcaption>
+                    </figure>
+                </div>
+                <!-- DESCRIPCIÓN COMERCIO -->
+                <div class="tarea widget uib_w_27 d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0" name="uib_w_27">
+                    <div class="widget-container left-receptacle"></div>
+                    <div class="widget-container right-receptacle"></div>
+                    <div class="text-container">
+                        <p><strong>Sector: </strong>Nuevas Tecnologías</p>
+
+                        <p><strong>Categoría: </strong>Informática</p>
+
+                        <p><strong>Contacto: </strong><a href="mailto:info@informaticasantboi.es">info@informaticasantboi.es</a>
+                        </p>
+
+                        <p><strong>Teléfono: </strong><a href="tel:+34936612616">936 612 616</a>
+                        </p>
+
+                        <p><strong><a href="http://www.informaticasantboi.es/">Website</a></strong>
+                        </p>
+
+                        <p><strong>Horario:</strong>
+                        </p>
+
+                        <p>De Lunes a Viernes de 11:00h a 14:00h y de 17:00h a 20:00h</p>
+
+                        <p>Sábados y Domingos Cerrados</p>
+                    </div>
+                </div>
+                <!-- WIDGET GOOGLE -->
+
+                <div class="widget uib_w_38 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-lat="41.341927" data-center-latitude="41.341927" data-long="2.044438" data-center-longitude="2.044438" data-animate-marker="bounce"></div>
+            </div>
+            <!-- Centre Quiromatge Mª Teresa Castanera -->
+            <div id="quiroteresa" class="upage-content vertical-col left hidden">
+                <!-- Codi navbar -->
+                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_34 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget uib_w_34 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                    <span><a class="navbar-brand" href="#">Mª Teresa Castanera</a></span>
+                    <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+                </div>
+                <div class="widget uib_w_44 scale-image d-margins" data-uib="media/img" data-ver="0">
+                    <figure class="figure-align">
+                        <img src="http://appserv.hol.es/images_tiendas/satellite-8.png">
+                        <figcaption data-position="bottom"></figcaption>
+                    </figure>
+                </div>
+                <!-- DESCRIPCIÓN COMERCIO -->
+                <div class="tarea widget uib_w_34 d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0" name="uib_w_34">
+                    <div class="widget-container left-receptacle"></div>
+                    <div class="widget-container right-receptacle"></div>
+                    <div class="text-container">
+                        <p><strong>Sector: </strong>Cura Personal</p>
+
+                        <p><strong>Categoría: </strong>Centro de Quiromasaje</p>
+
+                        <p><strong>Teléfono: </strong><a href="tel:+34936547242">936 547 242</a>
+                        </p>
+
+                        <p><strong>Horario:</strong>
+                        </p>
+
+                        <p>De lunes a viernes de --:--h a --:--h</p>
+
+                        <p>Sábados de --:--h a --:--h</p>
+
+                        <p>Domingos de --:--h a --:--h</p>
+                    </div>
+                </div>
+                <!-- WIDGET GOOGLE -->
+
+                <div class="widget uib_w_39 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-animate-marker="bounce" data-long="2.042013" data-center-longitude="2.042013" data-lat="41.348401" data-center-latitude="41.348401"></div>
+            </div>
+            <!-- FOGON SANT BOI -->
+            <div id="fogonstboi" class="upage-content vertical-col left hidden">
+                <!-- Codi navbar -->
+                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_35 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget uib_w_35 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                    <a class="navbar-brand" href="#">El Fogón Sant Boi</a>
+                    <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+                </div>
+                <!-- IMAGEN EMPRESA -->
+                <div class="widget uib_w_35 scale-image d-margins sombreadoGeneral" data-uib="media/img" data-ver="0">
+                    <figure class="figure-align">
+                        <img src="http://appserv.hol.es/images_tiendas/logo.png">
+
+                        <figcaption data-position="bottom"></figcaption>
+                    </figure>
+                </div>
+                <!-- DESCRIPCIÓN COMERCIO -->
+                <div class="tarea widget uib_w_35 d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0" name="uib_w_35">
+                    <div class="widget-container left-receptacle"></div>
+                    <div class="widget-container right-receptacle"></div>
+                    <div class="text-container">
+                        <p><strong>Sector: </strong>Restauración</p>
+
+                        <p><strong>Categoría: </strong>Restaurante</p>
+
+                        <p><strong>Contacto: </strong><a href="mailto:restauranteelfogon@hotmail.com">restauranteelfogon@hotmail.com</a>
+                        </p>
+
+                        <p><strong>Teléfono: </strong><a href="tel:+34936542344">936 542 344</a>
+                        </p>
+
+                        <p><strong><a href="http://www.elfogondesantboi.es/">Website</a></strong>
+                        </p>
+
+                        <p><strong>Horario:</strong>
+                        </p>
+
+                        <p>De lunes a viernes de --:--h a --:--h</p>
+
+                        <p>Sábados de --:--h a --:--h</p>
+
+                        <p>Domingos de --:--h a --:--h</p>
+                    </div>
+                </div>
+                <!-- WIDGET GOOGLE -->
+
+                <div class="widget uib_w_40 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-animate-marker="bounce" data-long="2.042486" data-center-longitude="2.042486" data-lat="41.347448" data-center-latitude="41.347448"></div>
+            </div>
+        </div>
+        <script>
+            var aux = localStorage.getItem("registrado") || "false";
+            var primera = document.getElementsByClassName("SliderBarBotonRegistro");
+            var segunda = document.getElementsByClassName("SliderBarBotonCuenta");
+            var tercera = document.getElementsByClassName("SliderLogin");
+            if(aux.localeCompare("false") == 0){
+                for (var i = 0; i<primera.length; i++){
+                    primera[i].style.visibility = 'block';
+                    segunda[i].style.display = 'none';
+                    tercera[i].style.visibility = 'block';
+                }
+            }else{
+                for (var i = 0; i<primera.length; i++){
+                    primera[i].style.display = 'none';
+                    segunda[i].style.visibility = 'block';
+                    tercera[i].style.display = 'none';
+                }
+            }
+        </script>
+    </body>
+
+</html>
