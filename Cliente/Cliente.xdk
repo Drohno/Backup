@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "b384d701-d406-4b4b-87ec-78f4198c5c01",
-      "lastModifiedDate": 1464817137779,
+      "lastModifiedDate": 1464970749140,
       "creationDate": 1462379172914
     },
     "XDK-app-designer": "true",
@@ -69,7 +69,7 @@
         "name": "PushPlugin",
         "version": "2.5.0",
         "originType": "local",
-        "origin": "/C/Users/David/Desktop/PFGS/com.phonegap.plugins.PushPlugin",
+        "origin": "/C/Users/Sando/Documents/Proyecto-Final-DAM/com.phonegap.plugins.PushPlugin",
         "gitref": "",
         "paramvals": {},
         "sourceLocation": "plugins/com.phonegap.plugins.PushPlugin",
@@ -107,7 +107,7 @@
           "android-targetSdkVersion": "21",
           "android-installLocation": "auto",
           "android-signed": true,
-          "Orientation": "default",
+          "Orientation": "landscape",
           "Fullscreen": false
         },
         "isActive_": true,
